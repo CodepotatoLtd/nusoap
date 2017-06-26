@@ -299,12 +299,12 @@ class nusoap_client extends nusoap_base  {
 			// fault?
 			if(is_array($return) && isset($return['faultcode'])){
 				$this->debug('got fault');
-				if( is_array( $return['faultcode'] ) )
+				if( is_array( $return['faultstring'] ) )
 				{
 					$i = 0;
 					foreach( $return['faultcode'] as $fc )
 					{
-                        $this->setError($return['faultcode'][$i].': '.$return['faultstring'][$i]);
+                        $this->setError($return['faultcode'] . ': '.$return['faultstring'][$i]);
 						$i++;
 					}
 				}
