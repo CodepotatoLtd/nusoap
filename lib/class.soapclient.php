@@ -304,7 +304,7 @@ class nusoap_client extends nusoap_base  {
 					$i = 0;
 					foreach( $return['faultstring'] as $fc )
 					{
-                        $this->setError( $return['faultcode'] . '-' . $i . ' = ' . $fc );
+                        $this->debug($fc);
 						$i++;
 					}
 				}
