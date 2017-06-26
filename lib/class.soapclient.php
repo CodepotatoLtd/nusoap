@@ -312,11 +312,8 @@ class nusoap_client extends nusoap_base  {
                     $this->setError($return['faultcode'] . ': ' . $return['faultstring']);
                 }
 				$this->fault = true;
-				foreach($return as $k => $v){
-					$this->$k = $v;
-					$this->debug("$k = $v<br>");
-				}
-				return $return;
+
+				return $this->varDump($return);
 			} elseif ($style == 'document') {
 				// NOTE: if the response is defined to have multiple parts (i.e. unwrapped),
 				// we are only going to return the first part here...sorry about that
