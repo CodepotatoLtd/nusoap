@@ -4,5 +4,6 @@
     "license": "LGPLv2",
     "autoload": {
     	"classmap": ["lib/"]
-    }
+    },
+    "version": "1.0.0"
 }
